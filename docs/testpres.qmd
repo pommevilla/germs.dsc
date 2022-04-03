@@ -1,0 +1,12 @@
+---
+title: "Test"
+format: revealjs
+---
+
+## Getting up
+
+And doing stuff
+
+## Coming down
+
+And finishing

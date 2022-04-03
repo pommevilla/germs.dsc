@@ -1,0 +1,16 @@
+{
+  "hash": "fdb2183935976fc2cf96ce608def89ce",
+  "result": {
+    "markdown": "---\ntitle: \"First meeting\"\n---\n\nHello! Today's the first lesson!\n\n# Download the data\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n\nggplot(mtcars, aes(hp, mpg)) + \n  geom_point()\n```\n\n::: {.cell-output-display}\n![](first_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n# EDA \n\n# Visualization\n\n# Next time...",
+    "supporting": [
+      "first_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": [],
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

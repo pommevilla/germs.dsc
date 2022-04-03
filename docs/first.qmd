@@ -1,0 +1,21 @@
+---
+title: "First meeting"
+---
+
+Hello! Today's the first lesson!
+
+# Download the data
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+
+ggplot(mtcars, aes(hp, mpg)) + 
+  geom_point()
+```
+
+
+# EDA 
+
+# Visualization
+
+# Next time...

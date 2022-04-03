@@ -1,0 +1,41 @@
+project:
+  type: website
+
+execute:
+  freeze: auto
+
+website:
+  repo-url: https://github.com/pommevilla/crop_priming
+  title: "GERMS Data Club"
+  website:
+    page-navigation: true
+  navbar:
+    background: light
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      
+  sidebar: 
+    style: docked
+    contents: 
+      - href: index.qmd
+        text: "Home"
+      - section: "Lessons"
+        contents:
+          - docs/first.qmd
+          - docs/testpres.qmd
+      - about.qmd
+
+format:
+  html:
+    code-copy: true
+    code-link: true
+    # code-tools: true
+    theme: cosmo
+    css: styles/styles.scss
+    toc: true
+    
+
+
+

@@ -3,11 +3,11 @@ title: "Introduction"
 date: last-modified
 ---
 
-And this?
-
-How about this?
+Landing page for GERMS Data Science Club.
 
 # Mission Statement
+
+Show people some stuff!
 
 # When
 

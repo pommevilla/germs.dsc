@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Introduction",
     "section": "",
-    "text": "How about this?\n\nMission Statement\n\n\nWhen\n\nplot(1:10)\n\n\n\n\n\n\nWhere\n\n\nHow to get started:\ngit clone this repo"
+    "text": "Mission Statement\nShow people some stuff!\n\n\nWhen\n\nplot(1:10)\n\n\n\n\n\n\nWhere\n\n\nHow to get started:\ngit clone this repo"
   },
   {
     "objectID": "about.html",

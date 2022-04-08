@@ -11,6 +11,12 @@ How about this?
 
 # When
 
+
+```{r}
+plot(1:10)
+```
+
+
 # Where
 
 # How to get started:

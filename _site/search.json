@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "How about this?\n\nMission Statement\n\n\nWhen\n\n\nWhere\n\n\nHow to get started:\ngit clone this repo"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "docs/testpres.html#getting-up",
     "href": "docs/testpres.html#getting-up",
     "title": "Test",
@@ -33,5 +19,19 @@
     "title": "First meeting",
     "section": "",
     "text": "Download the data\n\nlibrary(tidyverse)\n\nggplot(mtcars, aes(hp, mpg)) + \n  geom_point()\n\n\n\n\n\n\nEDA\n\n\nVisualization\n\n\nNext time…"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "How about this?\n\nMission Statement\n\n\nWhen\n\nplot(1:10)\n\n\n\n\n\n\nWhere\n\n\nHow to get started:\ngit clone this repo"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   }
 ]

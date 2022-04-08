@@ -1,5 +1,7 @@
 project:
   type: website
+  output-dir: _site
+  
 
 execute:
   freeze: auto
@@ -7,14 +9,19 @@ execute:
 website:
   repo-url: https://github.com/pommevilla/crop_priming
   title: "GERMS Data Club"
-  website:
-    page-navigation: true
+  toc: true
+  
+  page-navigation: true
+    
   navbar:
     background: light
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+    right:
+      - text: "GERMS Lab"
+        url: "http://germslab.org"
       
   sidebar: 
     style: docked
@@ -30,8 +37,6 @@ website:
 format:
   html:
     code-copy: true
-    code-link: true
-    # code-tools: true
     theme: cosmo
     css: styles/styles.scss
     toc: true

@@ -1,0 +1,16 @@
+{
+  "hash": "05fd5f9f64a419925489dfcd58f5b6d2",
+  "result": {
+    "markdown": "---\ntitle: \"Introduction\"\ndate: last-modified\n---\n\nAnd this?\n\nHow about this?\n\n# Mission Statement\n\n# When\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(1:10)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n# Where\n\n# How to get started:\n\n`git clone` this repo",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": [],
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

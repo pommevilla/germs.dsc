@@ -1,0 +1,19 @@
+---
+title: "First meeting"
+date: last-modified
+---
+
+For the first lesson, we'll set up the projects we'll work in for the next several meetings. 
+By the end of today, we'll have:
+
+* Set up a new Github repo
+* Downloaded the data
+* Cleaned the data 
+* Made a visualization
+
+Along the way, we'll familiarize ourselves with Quarto documents.
+
+# Get the data
+
+
+

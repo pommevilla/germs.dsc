@@ -30,8 +30,7 @@ website:
         text: "Home"
       - section: "Lessons"
         contents:
-          - docs/first.qmd
-          - docs/testpres.qmd
+          - docs/lessons/getting_started.qmd
       - about.qmd
 
 format:

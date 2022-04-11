@@ -1,24 +1,18 @@
 ---
-title: "Introduction"
+title: "GERMS-DS"
 date: last-modified
 ---
 
-Landing page for GERMS Data Science Club.
+The goal of the GERMS-DS is to walk GERMS lab members through a data science project. The analysis part of a data science project is obviously important, so we'll walk through cleaning/transforming data, formulating questions, creating visualizations, and doing predictions/statistical tests where appropriate. However, we'll walk through all the other parts of doing analysis that is talked about less, like how to use Git to version your work, how to structure your directory, how to organize your code, and how to share your work online. 
 
-# Mission Statement
+# Schedule
 
-Show people some stuff!
+The first GERMS-DS meeting is on Monday, April 11 at  9AM in Elings 4321. Future meetings will be held every other Monday at the same time. 
 
-# When
+# What you need to get started
+
+* Install [R](https://cran.r-project.org/bin/windows/base/) and the latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/)
+* Install [Quarto](https://quarto.org/docs/get-started/)
+* Install the `tidyverse`, `tidymodels`, `rmarkdown`, and `readxl` libraries
 
 
-```{r}
-plot(1:10)
-```
-
-
-# Where
-
-# How to get started:
-
-`git clone` this repo

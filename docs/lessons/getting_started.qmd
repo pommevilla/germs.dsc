@@ -1,19 +1,418 @@
 ---
-title: "First meeting"
+title: "Getting Started"
 date: last-modified
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
 
-For the first lesson, we'll set up the projects we'll work in for the next several meetings. 
+For the first lesson, we'll set up the project we'll work in for the next several meetings.
 By the end of today, we'll have:
 
-* Set up a new Github repo
-* Downloaded the data
-* Cleaned the data 
-* Made a visualization
+-   Set up a new Github repo
+-   Downloaded the data
+-   Explored and cleaned the data a bit
+-   Made a visualization
 
-Along the way, we'll familiarize ourselves with Quarto documents.
+Along the way, we'll be using Quarto documents (successor to RMarkdown documents) so that our work is well-documented and ready to share.
+Before we get started with all of that, though, let's familiarize ourselves with the data we'll be working with.
+
+## The Iowa DNR's Lake Monitoring Dataset
+
+For the past several decades, the Iowa Department of Natural Resources has been monitoring the water quality of multiple beaches throughout Iowa in order to better understand harmful algal blooms.
+Between Memorial and Labor day, weekly water samples are taken from these beaches and several chemical and biological measurements are taken.
+In addition to these measurements, we will incorporate land-use classifications and weather data.
+
+![The beaches that the Iowa DNR collected water samples from in 2018.](../images/DNR_samples.jpg "Title"){fig-align="center"}
+
+The measurement of interest is the microcystin concentration, measured in ug/L.
+When this measurement is above the EPA-recommend 8 ug/L, the beach is closed as it is considered dangerous to humans at that point.
+Hence, this is considered a **supervised** learning problem.
+
+The goal of the project will be to use this data to:
+
+1.  Attempt to better understand what drives harmful algal blooms
+2.  Create a model that can predict harmful algal blooms
+
+Now that we know a little bit about the data we'll be working with and the problem we're being asked to solve, let's go ahead and set up our project.
+
+# Setting up your project directory
+
+We'll start by creating a new Github repository.
+Go to [github](www.github.com) and click the `+` and create a new repository.
+
+1.  Name the repository `dnr_habs`.
+2.  Select the option to create a `README.md` file
+3.  Then click "Create repository".
+
+![](../images/new_git_repo.png){fig-align="center" width="472"}
+
+You'll be taken to your new `dnr_habs` repository.
+Click on the "Code" button and you'll see the copy link for the repo with a couple different options.
+If you've set up an SSH key, click `SSH`; otherwise, HTTPS is fine.
+Click the copy button to the right of the link:
+
+![](../images/git_copy_clone_link.png){fig-align="center" width="800"}
+
+Now open your command line interface (CLI).
+On Mac, this can be Terminal or iTerm2; on Windows, this can be Git Bash or PuTTy.
+Navigate to wherever you want your project to sit and run the following command:
+
+    git clone https://github.com/pommevilla/dnr_habs.git
+
+You'll now see that `dnr_habs` is on your computer now.
+
+::: {.callout-note appearance="simple"}
+## Keep your project directories in one place!
+
+If you haven't done so already, I highly recommend keeping all of your project repositories in a central place.
+For example, on all my machines, I have a `repos` folder in my home directory.
+This way, whenever I'm doing stuff on command line, I know that all of my work can be found within `~/repos`.
+
+I also keep a directory called `scratch` here that contains all of the one-off random tasks/scripts I find myself writing.
+Whenever I need to do a random plot or calculation that doesn't need it's own project, I just throw it in `scratch` instead of cluttering up my Desktop or somewhere else.
+This way, I always know where to look for these things if I need to reference it later.
+:::
 
 # Get the data
 
+Create a folder in `dnr_habs` called `data`.
+You can download a zip of the data we'll use from [this link](https://github.com/pommevilla/germs.dsc/raw/main/data/DNR_data.zip).
+Save `DNR_data.zip` to the `data` folder.
 
+Now that we've made a change, let's go ahead and make our first commit.
+On the command line:
 
+1.  Run `git status` to verify that the only thing that's changed is adding `data/DNR_data.zip`
+2.  Run `git add data/DNR_data.zip` to stage the data
+3.  Run `git commit -m 'Initial add of data'` to commit the changes
+4.  Send the changes to the remote using `git push`
+
+Now, if you go back to your remote repository, you should see that the `data` folder is viewable.
+
+::: {.callout-note appearance="simple"}
+## A word about `git status`
+
+I didn't show it up above, but I run `git status` after nearly every `git` command I do to make sure that what I expect to happen is actually happening.
+It might be slightly annoying to do all the time, but the couple of seconds you take running `git status` will prevent hours of headaches down the road when you know what to look for.
+:::
+
+# Create a project in RStudio
+
+Open up RStudio and select `File > New Project > Existing Directory`, then use the `Browse` button to navigate to `dnr_habs`.
+Click `Create project` and a new RStudio session will begin with the `dnr_habs` directory open.
+
+On the command line, run `git status` and you'll notice that there are two new files added: `.gitignore` and `dnr_habs.Rproj`.
+We'll talk about these more later, but let's commit this for now:
+
+1.  `git status` (Verify that `dnr_habs.Rproj` and `.gitignore` are untracked files)
+2.  `git add .` (Note the dot; we're adding all of the changes to all of the files in the current working directory)
+3.  `git commit -m 'Create RProject'`
+4.  `git push`
+
+::: {.callout-note appearance="simple"}
+## Why use RProjects?
+
+`Rprojects` are a nice, simple way to keep all of your files related to a single project cleanly separated from other files on your system.
+In addition, using an `Rproject` figures out your working directory for you; no need to `setwd` to get your scripts to work.
+
+To get back here in the future, you can use `File > Open Project...`, or just open the `dnr_habs.Rproj` item.
+:::
+
+# Creating the document
+
+Okay, let's actually do some coding.
+In RStudio, click `File > New File > Quarto Document...` and just go ahead and click `Create`.
+You'll be taken to a new, empty document.
+This document is in the Visual editor mode.
+For now, click the "Source" button in the top left:
+
+![](../images/source_visual.png){fig-align="center" width="600"}
+
+Great! Go ahead and save it as `dnr_eda.qmd`.
+From here we can start coding.
+We'll start by loading the libraries we're going to use today.
+First, create a new code chunk.
+You can select the "+C" button in the top right of the pane, or you can use the key shortcuts:
+
+-   On Mac, `Option + Command + I`
+-   On Windows, `Control + Alt + I`
+
+Within the chunk, load `tidyverse`, `readxl`, `janitor`, and `lubridate`:
+
+```{r}
+#| warning: false
+#| message: false
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(janitor)
+
+theme_set(theme_minimal())
+```
+
+Go ahead and run the chunk.
+
+Now we're ready to read the dataset.
+
+::: {.callout-note appearance="simple"}
+## The Visual Markdown Editor
+
+The Visual Markdown Editor is actually super sick and let's you do a lot of cool stuff.
+To learn more about the Visual Editor, check out [the documentation](https://rstudio.github.io/visual-markdown-editing/).
+
+The only reason I don't use it is because I use Vim keybindings in my RStudio, and those are not compatible with the Visual Markdown Editor.
+:::
+
+# Reading in the data
+
+Before we can read in the data, we need to extract it from `DNR_data.zip` into the `data` folder.
+Afterwards, we can read in the data using `readxl`.
+We'll start with the 2018 data.
+Create a new code chunk, then run:
+
+```{r}
+#| eval: false
+dnr.2018 <- read_xlsx("data/IowaDNR_2018_Data_Merged.xlsx")
+dnr.2018 %>% 
+  head()
+```
+
+```{r}
+#| echo: false
+dnr.2018 <- read_xlsx("../../data/IowaDNR_2018_Data_Merged.xlsx")
+dnr.2018 %>% 
+  head()
+```
+
+The column names are a little hard to work with.
+Let's use `janitor::clean_names` to make the column names easier to type:
+
+```{r}
+#| eval: false
+dnr.2018 <- read_xlsx("data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  clean_names()
+dnr.2018 %>% 
+  head()
+```
+
+```{r}
+#| echo: false
+dnr.2018 <- read_xlsx("../../data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  clean_names()
+dnr.2018 %>% 
+  head()
+```
+
+Okay, it's a bit easier to work with now.
+
+# Some EDA
+
+## Checking year counts
+
+Let's start off by counting the samples by year to make sure that the dataset doesn't have any observations from other years.
+Since `collected_date` is a datetime object (as denoted by the `dttm` beneath the column name), we can use the `year` function from `lubridate` to `count`:
+
+```{r}
+dnr.2018 %>% 
+  count(year(collected_date))
+```
+
+It looks like there's an observation that doesn't have the year for some reason.
+Let's take a look at it:
+
+```{r}
+dnr.2018 %>% 
+  filter(is.na(collected_date))
+```
+
+For some reason, this observation has no data, but has a sample_id and location.
+Checking the original Excel file confirms that this is the case, and so we can remove this row as an additional step when we read in the file.
+The updated command to read in the file is:
+
+```{r}
+#| eval: false
+dnr.2018 <- read_xlsx("data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date))
+dnr.2018 %>% 
+  head()
+```
+
+```{r}
+#| echo: false
+dnr.2018 <- read_xlsx("../../data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date))
+dnr.2018 %>% 
+  head()
+```
+
+Let's count again to confirm this works:
+
+```{r}
+dnr.2018 %>% 
+  count(year(collected_date))
+```
+
+Great!
+Now all of the remaining data has the correct year.
+
+## Exploring microcystin
+
+Since the microcystin concentration is how we're going to label the samples, we need to check that they're all there. 
+Similar to the above, we can count the number of missing rows using `is.na` and `count`:
+
+```{r}
+dnr.2018 %>% 
+  count(is.na(microcystin_raw_value_ug_l))
+```
+
+This tells us that there are no missing values in the microcystin column, which is good since we won't need to throw any data away.
+
+Now let's see how the microcystin is distributed:
+
+```{r}
+#| warning: false
+dnr.2018 %>% 
+  ggplot(aes(microcystin_raw_value_ug_l)) +
+  geom_histogram(color = "black", fill = "white") +
+  labs(
+    x = "Microcystin (ug/L)",
+    y = "Count",
+    title = "Microcystin concentration (all lakes, all weeks)"
+  ) + 
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.title = element_text(hjust = 0.5)
+  )
+```
+
+The data shows a long right tail. This is our first hint that this is a highly imbalanced dataset.
+
+### Creating the `hazard_class` variable
+
+To get a better idea of this, let's create a new class variable based on the microcystin concentration: if the microcystin is greater than 8 ug/L, we'll say that it is **hazardous**, and **safe** otherwise.
+For now, let's just check print out the results and check that it works as we expected it to:
+
+```{r}
+dnr.2018 %>% 
+  mutate(hazard_class = if_else(
+    microcystin_raw_value_ug_l > 8,
+    "hazardous",
+    "safe"
+  )) %>% 
+  select(microcystin_raw_value_ug_l, hazard_class)
+```
+
+Okay, this looks correct. 
+Let's update our code that reads in the data to include this before we forget:
+
+```{r}
+#| eval: false
+dnr.2018 <- read_xlsx("data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date)) %>% 
+  mutate(hazard_class = if_else(
+    microcystin_raw_value_ug_l > 8,
+    "hazardous",
+    "safe"
+    ))
+dnr.2018 %>% 
+  head()
+```
+
+```{r}
+#| echo: false
+dnr.2018 <- read_xlsx("../../data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date)) %>%   
+  mutate(hazard_class = if_else(
+    microcystin_raw_value_ug_l > 8,
+    "hazardous",
+    "safe"
+  )) 
+dnr.2018 %>% 
+  head()
+```
+
+And now, let's see just how imbalanced these samples are:
+
+```{r}
+dnr.2018 %>% 
+  count(hazard_class) %>% 
+  mutate()
+```
+
+So, of the 539 total samples, only 17 of them are considered hazardous. 
+To put numbers on how imbalanced this is:
+
+```{r}
+dnr.2018 %>% 
+  group_by(hazard_class) %>% 
+  summarise(n = n()) %>% 
+  mutate(prop = n / sum(n))
+```
+
+Only **3%** of our samples belong to the minority class. 
+This is an **extremely** imbalanced dataset and we must address this when we do our model training and predictions.
+
+::: {.callout-note appearance="simple"}
+Note that putting the microcystin on a log scale makes the distribution appear normal. 
+This is an example of a [log-normal distribution](https://en.wikipedia.org/wiki/Log-normal_distribution). Here is some further reading:
+
+* [A good post about its statistical properties](https://stats.stackexchange.com/questions/389315/what-is-the-best-point-forecast-for-lognormally-distributed-data)
+* [A post about making predictions on a log-normal distribution](https://stats.stackexchange.com/questions/155829/lognormal-regression)
+:::
+
+# Plotting counts of hazardous cases by lake
+
+The next thing we might be interested in is *where* the HABs are occurring. 
+There are several ways to do this, but one way is to begin by filtering out the non-hazardous samples, then counting the locations the hazardous samples occurred at:
+
+```{r}
+dnr.2018 %>% 
+  filter(hazard_class == "hazardous") %>% 
+  count(environmental_location)
+```
+
+So this shows us that the harmful algal blooms occurred in only a few places.
+Let's make a plot to communicate this:
+
+```{r}
+dnr.2018 %>% 
+  filter(hazard_class == "hazardous") %>% 
+  count(environmental_location) %>% 
+  mutate(environmental_location = fct_reorder(environmental_location, n)) %>% 
+  ggplot(aes(n, environmental_location)) + 
+  geom_col() + 
+  labs(
+    x = "# Hazardous Samples",
+    y = "Sample Location",
+    title = "Nearly half of all HABs occurred at Viking Lake Beach in 2018"
+  )
+```
+
+# Commit your work
+
+Before we wrap up for the day, let's commit our work.
+We're not making any webpages yet, so the only thing that we need to worry about is saving the `qmd` we've been working in.
+After that, go ahead and:
+
+1. `git status` (`data` and `dnr_eda.qmd` should show up here)
+2. `git add .`
+3. `git commit -m 'Begin EDA'`
+4. `git push`
+
+Afterwards, if you go to your Github page, you should see `dnr_eda.qmd` at the project root.
+
+# Homework 
+
+* Repeat the EDA and visualizations for the 2019 data set.
+* Commit and push your changes
+* Combine the 2019 and 2020 datasets. 
+
+# Next time
+
+* Model training and predictions with `tidymodels` 

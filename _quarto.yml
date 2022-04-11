@@ -36,6 +36,7 @@ website:
 format:
   html:
     code-copy: true
+    code-block-bg: true
     theme: cosmo
     css: styles/styles.scss
     toc: true

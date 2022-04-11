@@ -13,6 +13,6 @@ The first GERMS-DS meeting is on Monday, April 11 at  9AM in Elings 4321. Future
 
 * Install [R](https://cran.r-project.org/bin/windows/base/) and the latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/)
 * Install [Quarto](https://quarto.org/docs/get-started/)
-* Install the `tidyverse`, `tidymodels`, `rmarkdown`, and `readxl` libraries
+* Install the `tidyverse`, `tidymodels`, `rmarkdown`, `janitor`, `lubridate`, and `readxl` libraries
 
 

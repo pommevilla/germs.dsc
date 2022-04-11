@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.178">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>GERMS Data Club - First meeting</title>
+  <title>GERMS Data Club - Getting Started</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -11,6 +11,69 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 
   <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -86,7 +149,7 @@
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">First meeting</h1>
+      <h1 class="quarto-secondary-nav-title">Getting Started</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -114,7 +177,7 @@
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/lessons/getting_started.html" class="sidebar-item-text sidebar-link active">First meeting</a>
+  <a href="../../docs/lessons/getting_started.html" class="sidebar-item-text sidebar-link active">Getting Started</a>
   </div>
 </li>
     </ul>
@@ -132,7 +195,24 @@
         <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
-<li><a href="#get-the-data" class="nav-link active" data-scroll-target="#get-the-data">Get the data</a></li>
+<li><a href="#the-iowa-dnrs-lake-monitoring-dataset" class="nav-link active" data-scroll-target="#the-iowa-dnrs-lake-monitoring-dataset">The Iowa DNR’s Lake Monitoring Dataset</a></li>
+<li><a href="#setting-up-your-project-directory" class="nav-link" data-scroll-target="#setting-up-your-project-directory">Setting up your project directory</a></li>
+<li><a href="#get-the-data" class="nav-link" data-scroll-target="#get-the-data">Get the data</a></li>
+<li><a href="#create-a-project-in-rstudio" class="nav-link" data-scroll-target="#create-a-project-in-rstudio">Create a project in RStudio</a></li>
+<li><a href="#creating-the-document" class="nav-link" data-scroll-target="#creating-the-document">Creating the document</a></li>
+<li><a href="#reading-in-the-data" class="nav-link" data-scroll-target="#reading-in-the-data">Reading in the data</a></li>
+<li><a href="#some-eda" class="nav-link" data-scroll-target="#some-eda">Some EDA</a>
+<ul class="collapse">
+<li><a href="#checking-year-counts" class="nav-link" data-scroll-target="#checking-year-counts">Checking year counts</a></li>
+<li><a href="#exploring-microcystin" class="nav-link" data-scroll-target="#exploring-microcystin">Exploring microcystin</a>
+<ul class="collapse">
+<li><a href="#creating-the-hazard_class-variable" class="nav-link" data-scroll-target="#creating-the-hazard_class-variable">Creating the <code>hazard_class</code> variable</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#plotting-counts-of-hazardous-cases-by-lake" class="nav-link" data-scroll-target="#plotting-counts-of-hazardous-cases-by-lake">Plotting counts of hazardous cases by lake</a></li>
+<li><a href="#commit-your-work" class="nav-link" data-scroll-target="#commit-your-work">Commit your work</a></li>
+<li><a href="#homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
+<li><a href="#next-time" class="nav-link" data-scroll-target="#next-time">Next time</a></li>
 </ul>
 </nav>
     </div>
@@ -141,18 +221,491 @@
 <header id="title-block-header" class="quarto-title-block default">
 
 
-<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">First meeting</h1></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Published</div><div class="quarto-title-meta-contents"><p class="date">April 10, 2022</p></div></div></div></header>
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">Getting Started</h1></div><div class="quarto-title-meta"><div><div class="quarto-title-meta-heading">Published</div><div class="quarto-title-meta-contents"><p class="date">April 11, 2022</p></div></div></div></header>
 
-<p>For the first lesson, we’ll set up the projects we’ll work in for the next several meetings. By the end of today, we’ll have:</p>
+<p>For the first lesson, we’ll set up the project we’ll work in for the next several meetings. By the end of today, we’ll have:</p>
 <ul>
 <li>Set up a new Github repo</li>
 <li>Downloaded the data</li>
-<li>Cleaned the data</li>
+<li>Explored and cleaned the data a bit</li>
 <li>Made a visualization</li>
 </ul>
-<p>Along the way, we’ll familiarize ourselves with Quarto documents.</p>
+<p>Along the way, we’ll be using Quarto documents (successor to RMarkdown documents) so that our work is well-documented and ready to share. Before we get started with all of that, though, let’s familiarize ourselves with the data we’ll be working with.</p>
+<section id="the-iowa-dnrs-lake-monitoring-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="the-iowa-dnrs-lake-monitoring-dataset">The Iowa DNR’s Lake Monitoring Dataset</h2>
+<p>For the past several decades, the Iowa Department of Natural Resources has been monitoring the water quality of multiple beaches throughout Iowa in order to better understand harmful algal blooms. Between Memorial and Labor day, weekly water samples are taken from these beaches and several chemical and biological measurements are taken. In addition to these measurements, we will incorporate land-use classifications and weather data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="../images/DNR_samples.jpg" title="Title" class="img-fluid figure-img">
+</figure>
+<p></p><figcaption aria-hidden="true" class="figure-caption">The beaches that the Iowa DNR collected water samples from in 2018.</figcaption><p></p>
+</figure>
+</div>
+<p>The measurement of interest is the microcystin concentration, measured in ug/L. When this measurement is above the EPA-recommend 8 ug/L, the beach is closed as it is considered dangerous to humans at that point. Hence, this is considered a <strong>supervised</strong> learning problem.</p>
+<p>The goal of the project will be to use this data to:</p>
+<ol type="1">
+<li>Attempt to better understand what drives harmful algal blooms</li>
+<li>Create a model that can predict harmful algal blooms</li>
+</ol>
+<p>Now that we know a little bit about the data we’ll be working with and the problem we’re being asked to solve, let’s go ahead and set up our project.</p>
+</section>
+<section id="setting-up-your-project-directory" class="level1">
+<h1>Setting up your project directory</h1>
+<p>We’ll start by creating a new Github repository. Go to <a href="www.github.com">github</a> and click the <code>+</code> and create a new repository.</p>
+<ol type="1">
+<li>Name the repository <code>dnr_habs</code>.</li>
+<li>Select the option to create a <code>README.md</code> file</li>
+<li>Then click “Create repository”.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/new_git_repo.png" class="img-fluid figure-img" width="472"></p>
+</figure>
+</div>
+<p>You’ll be taken to your new <code>dnr_habs</code> repository. Click on the “Code” button and you’ll see the copy link for the repo with a couple different options. If you’ve set up an SSH key, click <code>SSH</code>; otherwise, HTTPS is fine. Click the copy button to the right of the link:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/git_copy_clone_link.png" class="img-fluid figure-img" width="800"></p>
+</figure>
+</div>
+<p>Now open your command line interface (CLI). On Mac, this can be Terminal or iTerm2; on Windows, this can be Git Bash or PuTTy. Navigate to wherever you want your project to sit and run the following command:</p>
+<pre><code>git clone https://github.com/pommevilla/dnr_habs.git</code></pre>
+<p>You’ll now see that <code>dnr_habs</code> is on your computer now.</p>
+<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Keep your project directories in one place!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you haven’t done so already, I highly recommend keeping all of your project repositories in a central place. For example, on all my machines, I have a <code>repos</code> folder in my home directory. This way, whenever I’m doing stuff on command line, I know that all of my work can be found within <code>~/repos</code>.</p>
+<p>I also keep a directory called <code>scratch</code> here that contains all of the one-off random tasks/scripts I find myself writing. Whenever I need to do a random plot or calculation that doesn’t need it’s own project, I just throw it in <code>scratch</code> instead of cluttering up my Desktop or somewhere else. This way, I always know where to look for these things if I need to reference it later.</p>
+</div>
+</div>
+</section>
 <section id="get-the-data" class="level1">
 <h1>Get the data</h1>
+<p>Create a folder in <code>dnr_habs</code> called <code>data</code>. You can download a zip of the data we’ll use from <a href="https://github.com/pommevilla/germs.dsc/raw/main/data/DNR_data.zip">this link</a>. Save <code>DNR_data.zip</code> to the <code>data</code> folder.</p>
+<p>Now that we’ve made a change, let’s go ahead and make our first commit. On the command line:</p>
+<ol type="1">
+<li>Run <code>git status</code> to verify that the only thing that’s changed is adding <code>data/DNR_data.zip</code></li>
+<li>Run <code>git add data/DNR_data.zip</code> to stage the data</li>
+<li>Run <code>git commit -m 'Initial add of data'</code> to commit the changes</li>
+<li>Send the changes to the remote using <code>git push</code></li>
+</ol>
+<p>Now, if you go back to your remote repository, you should see that the <code>data</code> folder is viewable.</p>
+<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+A word about <code>git status</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I didn’t show it up above, but I run <code>git status</code> after nearly every <code>git</code> command I do to make sure that what I expect to happen is actually happening. It might be slightly annoying to do all the time, but the couple of seconds you take running <code>git status</code> will prevent hours of headaches down the road when you know what to look for.</p>
+</div>
+</div>
+</section>
+<section id="create-a-project-in-rstudio" class="level1">
+<h1>Create a project in RStudio</h1>
+<p>Open up RStudio and select <code>File &gt; New Project &gt; Existing Directory</code>, then use the <code>Browse</code> button to navigate to <code>dnr_habs</code>. Click <code>Create project</code> and a new RStudio session will begin with the <code>dnr_habs</code> directory open.</p>
+<p>On the command line, run <code>git status</code> and you’ll notice that there are two new files added: <code>.gitignore</code> and <code>dnr_habs.Rproj</code>. We’ll talk about these more later, but let’s commit this for now:</p>
+<ol type="1">
+<li><code>git status</code> (Verify that <code>dnr_habs.Rproj</code> and <code>.gitignore</code> are untracked files)</li>
+<li><code>git add .</code> (Note the dot; we’re adding all of the changes to all of the files in the current working directory)</li>
+<li><code>git commit -m 'Create RProject'</code></li>
+<li><code>git push</code></li>
+</ol>
+<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Why use RProjects?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>Rprojects</code> are a nice, simple way to keep all of your files related to a single project cleanly separated from other files on your system. In addition, using an <code>Rproject</code> figures out your working directory for you; no need to <code>setwd</code> to get your scripts to work.</p>
+<p>To get back here in the future, you can use <code>File &gt; Open Project...</code>, or just open the <code>dnr_habs.Rproj</code> item.</p>
+</div>
+</div>
+</section>
+<section id="creating-the-document" class="level1">
+<h1>Creating the document</h1>
+<p>Okay, let’s actually do some coding. In RStudio, click <code>File &gt; New File &gt; Quarto Document...</code> and just go ahead and click <code>Create</code>. You’ll be taken to a new, empty document. This document is in the Visual editor mode. For now, click the “Source” button in the top left:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/source_visual.png" class="img-fluid figure-img" width="600"></p>
+</figure>
+</div>
+<p>Great! Go ahead and save it as <code>dnr_eda.qmd</code>. From here we can start coding. We’ll start by loading the libraries we’re going to use today. First, create a new code chunk. You can select the “+C” button in the top right of the pane, or you can use the key shortcuts:</p>
+<ul>
+<li>On Mac, <code>Option + Command + I</code></li>
+<li>On Windows, <code>Control + Alt + I</code></li>
+</ul>
+<p>Within the chunk, load <code>tidyverse</code>, <code>readxl</code>, <code>janitor</code>, and <code>lubridate</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Go ahead and run the chunk.</p>
+<p>Now we’re ready to read the dataset.</p>
+<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The Visual Markdown Editor
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Visual Markdown Editor is actually super sick and let’s you do a lot of cool stuff. To learn more about the Visual Editor, check out <a href="https://rstudio.github.io/visual-markdown-editing/">the documentation</a>.</p>
+<p>The only reason I don’t use it is because I use Vim keybindings in my RStudio, and those are not compatible with the Visual Markdown Editor.</p>
+</div>
+</div>
+</section>
+<section id="reading-in-the-data" class="level1">
+<h1>Reading in the data</h1>
+<p>Before we can read in the data, we need to extract it from <code>DNR_data.zip</code> into the <code>data</code> folder. Afterwards, we can read in the data using <code>readxl</code>. We’ll start with the 2018 data. Create a new code chunk, then run:</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"data/IowaDNR_2018_Data_Merged.xlsx"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code># A tibble: 6 × 17
+  Sample_ID   `Environmental Locati…` `Collected Date`    `Microcystin \…`    pH
+  &lt;chr&gt;       &lt;chr&gt;                   &lt;dttm&gt;                         &lt;dbl&gt; &lt;dbl&gt;
+1 1-21280001  Backbone Beach          2018-05-22 11:19:00            0.63    8.1
+2 5-21280001  Backbone Beach          2018-06-19 09:00:00            0.46    8.8
+3 14-21280001 Backbone Beach          2018-08-21 13:00:00            0.438   8.9
+4 8-21280001  Backbone Beach          2018-07-10 11:15:00            0.425   8.2
+5 15-21280001 Backbone Beach          2018-08-28 12:30:00            0.418   8.8
+6 13-21280001 Backbone Beach          2018-08-14 10:30:00            0.405   8  
+# … with 12 more variables: `DOC(ppm)` &lt;dbl&gt;, `TKP (mg P/L)` &lt;dbl&gt;,
+#   `TKN (mg N/L)` &lt;dbl&gt;, `NH3 (mg N/L)` &lt;chr&gt;, `NOx (mg N/L)` &lt;dbl&gt;,
+#   `NO2 (mg N/L)` &lt;chr&gt;, `Cl (mg Cl/L)` &lt;chr&gt;, `SO4 mg SO4/L)` &lt;chr&gt;,
+#   `16S rRNA gene\r\n(copies/mL)` &lt;dbl&gt;,
+#   `MicrocystismcyA gene\r\n(copies/mL)` &lt;dbl&gt;,
+#   `AanabaenamcyA gene\r\n(copies/mL)` &lt;dbl&gt;,
+#   `PlanktothrixmcyA gene\r\n(copies/mL)` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>The column names are a little hard to work with. Let’s use <code>janitor::clean_names</code> to make the column names easier to type:</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"data/IowaDNR_2018_Data_Merged.xlsx"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code># A tibble: 6 × 17
+  sample_id  environmental_l… collected_date      microcystin_raw…   p_h doc_ppm
+  &lt;chr&gt;      &lt;chr&gt;            &lt;dttm&gt;                         &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+1 1-21280001 Backbone Beach   2018-05-22 11:19:00            0.63    8.1    5.85
+2 5-21280001 Backbone Beach   2018-06-19 09:00:00            0.46    8.8    1.45
+3 14-212800… Backbone Beach   2018-08-21 13:00:00            0.438   8.9    2.15
+4 8-21280001 Backbone Beach   2018-07-10 11:15:00            0.425   8.2    1.91
+5 15-212800… Backbone Beach   2018-08-28 12:30:00            0.418   8.8    1.73
+6 13-212800… Backbone Beach   2018-08-14 10:30:00            0.405   8      1.50
+# … with 11 more variables: tkp_mg_p_l &lt;dbl&gt;, tkn_mg_n_l &lt;dbl&gt;,
+#   nh3_mg_n_l &lt;chr&gt;, n_ox_mg_n_l &lt;dbl&gt;, no2_mg_n_l &lt;chr&gt;, cl_mg_cl_l &lt;chr&gt;,
+#   so4_mg_so4_l &lt;chr&gt;, x16s_r_rna_gene_copies_m_l &lt;dbl&gt;,
+#   microcystismcy_a_gene_copies_m_l &lt;dbl&gt;,
+#   aanabaenamcy_a_gene_copies_m_l &lt;dbl&gt;,
+#   planktothrixmcy_a_gene_copies_m_l &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Okay, it’s a bit easier to work with now.</p>
+</section>
+<section id="some-eda" class="level1">
+<h1>Some EDA</h1>
+<section id="checking-year-counts" class="level2">
+<h2 class="anchored" data-anchor-id="checking-year-counts">Checking year counts</h2>
+<p>Let’s start off by counting the samples by year to make sure that the dataset doesn’t have any observations from other years. Since <code>collected_date</code> is a datetime object (as denoted by the <code>dttm</code> beneath the column name), we can use the <code>year</code> function from <code>lubridate</code> to <code>count</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(<span class="fu">year</span>(collected_date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  `year(collected_date)`     n
+                   &lt;dbl&gt; &lt;int&gt;
+1                   2018   539
+2                     NA     1</code></pre>
+</div>
+</div>
+<p>It looks like there’s an observation that doesn’t have the year for some reason. Let’s take a look at it:</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(collected_date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 × 17
+  sample_id  environmental_l… collected_date microcystin_raw_valu…   p_h doc_ppm
+  &lt;chr&gt;      &lt;chr&gt;            &lt;dttm&gt;                         &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+1 4-21070001 George Wyth Bea… NA                                NA    NA      NA
+# … with 11 more variables: tkp_mg_p_l &lt;dbl&gt;, tkn_mg_n_l &lt;dbl&gt;,
+#   nh3_mg_n_l &lt;chr&gt;, n_ox_mg_n_l &lt;dbl&gt;, no2_mg_n_l &lt;chr&gt;, cl_mg_cl_l &lt;chr&gt;,
+#   so4_mg_so4_l &lt;chr&gt;, x16s_r_rna_gene_copies_m_l &lt;dbl&gt;,
+#   microcystismcy_a_gene_copies_m_l &lt;dbl&gt;,
+#   aanabaenamcy_a_gene_copies_m_l &lt;dbl&gt;,
+#   planktothrixmcy_a_gene_copies_m_l &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>For some reason, this observation has no data, but has a sample_id and location. Checking the original Excel file confirms that this is the case, and so we can remove this row as an additional step when we read in the file. The updated command to read in the file is:</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"data/IowaDNR_2018_Data_Merged.xlsx"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(collected_date))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code># A tibble: 6 × 17
+  sample_id  environmental_l… collected_date      microcystin_raw…   p_h doc_ppm
+  &lt;chr&gt;      &lt;chr&gt;            &lt;dttm&gt;                         &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+1 1-21280001 Backbone Beach   2018-05-22 11:19:00            0.63    8.1    5.85
+2 5-21280001 Backbone Beach   2018-06-19 09:00:00            0.46    8.8    1.45
+3 14-212800… Backbone Beach   2018-08-21 13:00:00            0.438   8.9    2.15
+4 8-21280001 Backbone Beach   2018-07-10 11:15:00            0.425   8.2    1.91
+5 15-212800… Backbone Beach   2018-08-28 12:30:00            0.418   8.8    1.73
+6 13-212800… Backbone Beach   2018-08-14 10:30:00            0.405   8      1.50
+# … with 11 more variables: tkp_mg_p_l &lt;dbl&gt;, tkn_mg_n_l &lt;dbl&gt;,
+#   nh3_mg_n_l &lt;chr&gt;, n_ox_mg_n_l &lt;dbl&gt;, no2_mg_n_l &lt;chr&gt;, cl_mg_cl_l &lt;chr&gt;,
+#   so4_mg_so4_l &lt;chr&gt;, x16s_r_rna_gene_copies_m_l &lt;dbl&gt;,
+#   microcystismcy_a_gene_copies_m_l &lt;dbl&gt;,
+#   aanabaenamcy_a_gene_copies_m_l &lt;dbl&gt;,
+#   planktothrixmcy_a_gene_copies_m_l &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Let’s count again to confirm this works:</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(<span class="fu">year</span>(collected_date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  `year(collected_date)`     n
+                   &lt;dbl&gt; &lt;int&gt;
+1                   2018   539</code></pre>
+</div>
+</div>
+<p>Great! Now all of the remaining data has the correct year.</p>
+</section>
+<section id="exploring-microcystin" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-microcystin">Exploring microcystin</h2>
+<p>Since the microcystin concentration is how we’re going to label the samples, we need to check that they’re all there. Similar to the above, we can count the number of missing rows using <code>is.na</code> and <code>count</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(<span class="fu">is.na</span>(microcystin_raw_value_ug_l))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  `is.na(microcystin_raw_value_ug_l)`     n
+  &lt;lgl&gt;                               &lt;int&gt;
+1 FALSE                                 539</code></pre>
+</div>
+</div>
+<p>This tells us that there are no missing values in the microcystin column, which is good since we won’t need to throw any data away.</p>
+<p>Now let’s see how the microcystin is distributed:</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(microcystin_raw_value_ug_l)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Microcystin (ug/L)"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Microcystin concentration (all lakes, all weeks)"</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="getting_started_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The data shows a long right tail. This is our first hint that this is a highly imbalanced dataset.</p>
+<section id="creating-the-hazard_class-variable" class="level3">
+<h3 class="anchored" data-anchor-id="creating-the-hazard_class-variable">Creating the <code>hazard_class</code> variable</h3>
+<p>To get a better idea of this, let’s create a new class variable based on the microcystin concentration: if the microcystin is greater than 8 ug/L, we’ll say that it is <strong>hazardous</strong>, and <strong>safe</strong> otherwise. For now, let’s just check print out the results and check that it works as we expected it to:</p>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hazard_class =</span> <span class="fu">if_else</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    microcystin_raw_value_ug_l <span class="sc">&gt;</span> <span class="dv">8</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hazardous"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"safe"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(microcystin_raw_value_ug_l, hazard_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 539 × 2
+   microcystin_raw_value_ug_l hazard_class
+                        &lt;dbl&gt; &lt;chr&gt;       
+ 1                      0.63  safe        
+ 2                      0.46  safe        
+ 3                      0.438 safe        
+ 4                      0.425 safe        
+ 5                      0.418 safe        
+ 6                      0.405 safe        
+ 7                      0.39  safe        
+ 8                      0.3   safe        
+ 9                      0.237 safe        
+10                      0.205 safe        
+# … with 529 more rows</code></pre>
+</div>
+</div>
+<p>Okay, this looks correct. Let’s update our code that reads in the data to include this before we forget:</p>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"data/IowaDNR_2018_Data_Merged.xlsx"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(collected_date)) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hazard_class =</span> <span class="fu">if_else</span>(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    microcystin_raw_value_ug_l <span class="sc">&gt;</span> <span class="dv">8</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hazardous"</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"safe"</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code># A tibble: 6 × 18
+  sample_id  environmental_l… collected_date      microcystin_raw…   p_h doc_ppm
+  &lt;chr&gt;      &lt;chr&gt;            &lt;dttm&gt;                         &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+1 1-21280001 Backbone Beach   2018-05-22 11:19:00            0.63    8.1    5.85
+2 5-21280001 Backbone Beach   2018-06-19 09:00:00            0.46    8.8    1.45
+3 14-212800… Backbone Beach   2018-08-21 13:00:00            0.438   8.9    2.15
+4 8-21280001 Backbone Beach   2018-07-10 11:15:00            0.425   8.2    1.91
+5 15-212800… Backbone Beach   2018-08-28 12:30:00            0.418   8.8    1.73
+6 13-212800… Backbone Beach   2018-08-14 10:30:00            0.405   8      1.50
+# … with 12 more variables: tkp_mg_p_l &lt;dbl&gt;, tkn_mg_n_l &lt;dbl&gt;,
+#   nh3_mg_n_l &lt;chr&gt;, n_ox_mg_n_l &lt;dbl&gt;, no2_mg_n_l &lt;chr&gt;, cl_mg_cl_l &lt;chr&gt;,
+#   so4_mg_so4_l &lt;chr&gt;, x16s_r_rna_gene_copies_m_l &lt;dbl&gt;,
+#   microcystismcy_a_gene_copies_m_l &lt;dbl&gt;,
+#   aanabaenamcy_a_gene_copies_m_l &lt;dbl&gt;,
+#   planktothrixmcy_a_gene_copies_m_l &lt;dbl&gt;, hazard_class &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>And now, let’s see just how imbalanced these samples are:</p>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(hazard_class) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  hazard_class     n
+  &lt;chr&gt;        &lt;int&gt;
+1 hazardous       17
+2 safe           522</code></pre>
+</div>
+</div>
+<p>So, of the 539 total samples, only 17 of them are considered hazardous. To put numbers on how imbalanced this is:</p>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hazard_class) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  hazard_class     n   prop
+  &lt;chr&gt;        &lt;int&gt;  &lt;dbl&gt;
+1 hazardous       17 0.0315
+2 safe           522 0.968 </code></pre>
+</div>
+</div>
+<p>Only <strong>3%</strong> of our samples belong to the minority class. This is an <strong>extremely</strong> imbalanced dataset and we must address this when we do our model training and predictions.</p>
+<div class="callout-note callout callout-style-simple">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Note that putting the microcystin on a log scale makes the distribution appear normal. This is an example of a <a href="https://en.wikipedia.org/wiki/Log-normal_distribution">log-normal distribution</a>. Here is some further reading:</p>
+<ul>
+<li><a href="https://stats.stackexchange.com/questions/389315/what-is-the-best-point-forecast-for-lognormally-distributed-data">A good post about its statistical properties</a></li>
+<li><a href="https://stats.stackexchange.com/questions/155829/lognormal-regression">A post about making predictions on a log-normal distribution</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="plotting-counts-of-hazardous-cases-by-lake" class="level1">
+<h1>Plotting counts of hazardous cases by lake</h1>
+<p>The next thing we might be interested in is <em>where</em> the HABs are occurring. There are several ways to do this, but one way is to begin by filtering out the non-hazardous samples, then counting the locations the hazardous samples occurred at:</p>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hazard_class <span class="sc">==</span> <span class="st">"hazardous"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(environmental_location)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  environmental_location        n
+  &lt;chr&gt;                     &lt;int&gt;
+1 Crandall's Beach              1
+2 Denison Beach                 1
+3 Green Valley Beach            3
+4 Lake Macbride Beach           1
+5 Lake of Three Fires Beach     3
+6 McIntosh Woods Beach          1
+7 Viking Lake Beach             7</code></pre>
+</div>
+</div>
+<p>So this shows us that the harmful algal blooms occurred in only a few places. Let’s make a plot to communicate this:</p>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="sourceCode r cell-code code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>dnr<span class="fl">.2018</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hazard_class <span class="sc">==</span> <span class="st">"hazardous"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(environmental_location) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">environmental_location =</span> <span class="fu">fct_reorder</span>(environmental_location, n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(n, environmental_location)) <span class="sc">+</span> </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"# Hazardous Samples"</span>,</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Sample Location"</span>,</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Nearly half of all HABs occurred at Viking Lake Beach in 2018"</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="getting_started_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="commit-your-work" class="level1">
+<h1>Commit your work</h1>
+<p>Before we wrap up for the day, let’s commit our work. We’re not making any webpages yet, so the only thing that we need to worry about is saving the <code>qmd</code> we’ve been working in. After that, go ahead and:</p>
+<ol type="1">
+<li><code>git status</code> (<code>data</code> and <code>dnr_eda.qmd</code> should show up here)</li>
+<li><code>git add .</code></li>
+<li><code>git commit -m 'Begin EDA'</code></li>
+<li><code>git push</code></li>
+</ol>
+<p>Afterwards, if you go to your Github page, you should see <code>dnr_eda.qmd</code> at the project root.</p>
+</section>
+<section id="homework" class="level1">
+<h1>Homework</h1>
+<ul>
+<li>Repeat the EDA and visualizations for the 2019 data set.</li>
+<li>Commit and push your changes</li>
+<li>Combine the 2019 and 2020 datasets.</li>
+</ul>
+</section>
+<section id="next-time" class="level1">
+<h1>Next time</h1>
+<ul>
+<li>Model training and predictions with <code>tidymodels</code></li>
+</ul>
 
 
 

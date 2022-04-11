@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.178">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>GERMS Data Club - Getting Started</title>
+  <title>GERMS-DS - Getting Started</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -124,7 +124,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">GERMS Data Club</span>
+    <span class="navbar-title">GERMS-DS</span>
   </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -169,7 +169,7 @@
 </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Lessons</a>
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Meetings</a>
       <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
@@ -177,7 +177,7 @@
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/lessons/getting_started.html" class="sidebar-item-text sidebar-link active">Getting Started</a>
+  <a href="../../docs/meetings/getting_started.html" class="sidebar-item-text sidebar-link active">Getting Started</a>
   </div>
 </li>
     </ul>
@@ -684,9 +684,16 @@ The Visual Markdown Editor
 </section>
 <section id="commit-your-work" class="level1">
 <h1>Commit your work</h1>
-<p>Before we wrap up for the day, let’s commit our work. We’re not making any webpages yet, so the only thing that we need to worry about is saving the <code>qmd</code> we’ve been working in. After that, go ahead and:</p>
+<p>Before we wrap up for the day, let’s commit our work. We’re not making any webpages yet, so the only thing that we need to worry about is saving the <code>qmd</code> we’ve been working in. Run <code>git status</code> to take a look at the changes.</p>
+<p>Something you’ll note, though, is that we’ve extracted the zip and have put all the <code>IowaDNR_xxxx_Data_Merged.xlsx</code> files in our project repository. This is redundant because we already have the <code>DNR_data.zip</code> file that contains all of these datasets. However, we want to keep these files in our local repository so that we can run our code without pushing it to the remote repository and cluttering things up.</p>
+<p>We can achieve this by adding the <code>*.xlsx</code> line to our <code>.gitignore</code>. This tells git to not track changes for any files that end in <code>*.xlsx</code>. Go ahead and add this line to your <code>.gitignore</code>, either by opening it up in RStudio or doing <code>echo "*.xslx" &gt;&gt; .gitignore</code> on the command line. Run <code>git status</code> again and you’ll see that the <code>xlsx</code> files are no longer being tracked. Let’s commit this change:</p>
 <ol type="1">
-<li><code>git status</code> (<code>data</code> and <code>dnr_eda.qmd</code> should show up here)</li>
+<li><code>git add .gitignore</code> (typically, we want our commits to be one thing at a time)</li>
+<li><code>git commit -m "Add xlsx files"</code></li>
+</ol>
+<p>Now that that’s done, let’s commit the rest of our files:</p>
+<ol type="1">
+<li><code>git status</code> (<code>dnr_eda.qmd</code>should show up here)</li>
 <li><code>git add .</code></li>
 <li><code>git commit -m 'Begin EDA'</code></li>
 <li><code>git push</code></li>

@@ -397,13 +397,28 @@ dnr.2018 %>%
 # Commit your work
 
 Before we wrap up for the day, let's commit our work.
-We're not making any webpages yet, so the only thing that we need to worry about is saving the `qmd` we've been working in.
-After that, go ahead and:
+We're not making any webpages yet, so the only thing that we need to worry about is saving the `qmd` we've been working in. 
+Run `git status` to take a look at the changes. 
 
-1. `git status` (`data` and `dnr_eda.qmd` should show up here)
-2. `git add .`
-3. `git commit -m 'Begin EDA'`
-4. `git push`
+Something you'll note, though, is that we've extracted the zip and have put all the `IowaDNR_xxxx_Data_Merged.xlsx` files in our project repository. 
+This is redundant because we already have the `DNR_data.zip` file that contains all of these datasets. 
+However, we want to keep these files in our local repository so that we can run our code without pushing it to the remote repository and cluttering things up.
+
+We can achieve this by adding the `*.xlsx` line to our `.gitignore`. 
+This tells git to not track changes for any files that end in `*.xlsx`. 
+Go ahead and add this line to your `.gitignore`, either by opening it up in RStudio or doing `echo "*.xslx" >> .gitignore` on the command line. 
+Run `git status` again and you'll see that the `xlsx` files are no longer being tracked.
+Let's commit this change:
+
+1. `git add .gitignore` (typically, we want our commits to be one thing at a time)
+1. `git commit -m "Add xlsx files"`
+
+Now that that's done, let's commit the rest of our files:
+
+1. `git status` (`dnr_eda.qmd`should show up here)
+1. `git add .`
+1. `git commit -m 'Begin EDA'`
+1. `git push`
 
 Afterwards, if you go to your Github page, you should see `dnr_eda.qmd` at the project root.
 

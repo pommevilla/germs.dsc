@@ -1,31 +1,31 @@
 [
   {
-    "objectID": "docs/testpres.html#getting-up",
-    "href": "docs/testpres.html#getting-up",
+    "objectID": "docs/presentations/testpres.html#getting-up",
+    "href": "docs/presentations/testpres.html#getting-up",
     "title": "Test",
     "section": "Getting up",
     "text": "Getting up\nAnd doing stuff"
   },
   {
-    "objectID": "docs/testpres.html#coming-down",
-    "href": "docs/testpres.html#coming-down",
+    "objectID": "docs/presentations/testpres.html#coming-down",
+    "href": "docs/presentations/testpres.html#coming-down",
     "title": "Test",
     "section": "Coming down",
     "text": "Coming down\nAnd finishing"
   },
   {
-    "objectID": "docs/first.html",
-    "href": "docs/first.html",
+    "objectID": "docs/lessons/getting_started.html",
+    "href": "docs/lessons/getting_started.html",
     "title": "First meeting",
     "section": "",
-    "text": "Download the data\n\nlibrary(tidyverse)\n\nggplot(mtcars, aes(hp, mpg)) + \n  geom_point()\n\n\n\n\n\n\nEDA\n\n\nVisualization\n\n\nNext time…"
+    "text": "Set up a new Github repo\nDownloaded the data\nCleaned the data\nMade a visualization\n\nAlong the way, we’ll familiarize ourselves with Quarto documents.\n\nGet the data"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Introduction",
+    "title": "GERMS-DS",
     "section": "",
-    "text": "Mission Statement\nShow people some stuff!\n\n\nWhen\n\nplot(1:10)\n\n\n\n\n\n\nWhere\n\n\nHow to get started:\ngit clone this repo"
+    "text": "Schedule\nThe first GERMS-DS meeting is on Monday, April 11 at 9AM in Elings 4321. Future meetings will be held every other Monday at the same time.\n\n\nWhat you need to get started\n\nInstall R and the latest version of RStudio\nInstall Quarto\nInstall the tidyverse, tidymodels, rmarkdown, and readxl libraries"
   },
   {
     "objectID": "about.html",

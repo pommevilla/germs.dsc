@@ -1,6 +1,6 @@
-# GERMS-DSC
+# GERMS-DS
 
-Landing page for GERMS-DSC.
+Landing page for GERMS-DS.
 
 Go to the webpage [here](https://pommevilla.github.io/germs.dsc/).
 

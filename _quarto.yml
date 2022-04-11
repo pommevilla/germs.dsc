@@ -1,14 +1,13 @@
 project:
   type: website
   output-dir: _site
-  
 
 execute:
   freeze: auto
 
 website:
-  repo-url: https://github.com/pommevilla/crop_priming
-  title: "GERMS Data Club"
+  repo-url: https://github.com/pommevilla/germs.dsc
+  title: "GERMS-DS"
   toc: true
   
   page-navigation: true
@@ -28,9 +27,9 @@ website:
     contents: 
       - href: index.qmd
         text: "Home"
-      - section: "Lessons"
+      - section: "Meetings"
         contents:
-          - docs/lessons/getting_started.qmd
+          - docs/meetings/getting_started.qmd
       - about.qmd
 
 format:

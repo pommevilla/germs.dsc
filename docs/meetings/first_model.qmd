@@ -1,0 +1,275 @@
+---
+title: "Beginning Predictions"
+date: last-modified
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+We're now going to make our first model.
+
+# Introduction
+
+# Homework from last time
+
+There were three "homework questions" from last time:
+
+-   Repeat the EDA and visualizations for the 2019 data set.
+-   Commit and push your changes
+-   Combine the 2019 and 2020 datasets.
+
+The first two are pretty straightforward, so I'll cover how to combine the 2018-2021 datasets.
+It's important that we combine the datasets correctly as this dataset is what we'll be using going forward in these meetings.
+
+## Combining the datasets
+
+Before we get started, let's check out the other spreadsheets.
+We already saw what was in the 2018 data, but let's open the Excel spreadsheets for the other datasets to see how straightforward combining the datasets will be.
+
+After opening up the datasets, here are the primary issues facing us:
+
+-   *Columns have different names between the different datasets.* For example, the Microcystin measurement is labeled "Microcystin RAW Value \[ug/L\]" in the 2018 data set but is called "Microcystin" in all of the other data sets. Another example is that the gene copy numbers of the various *mcy*A species (*mcy*A P/M/A) are labeled a few different ways.
+-   *Not all columns are shared between datasets.* This is most obvious when comparing the 2021 dataset versus the other years.
+
+With these in mind, our plan of attack will be, for each data set:
+
+1. Select only those columns that appear in the 2021 dataset
+1. Convert column names to a standard set of names
+1. Add a year column
+
+After we do all of these steps, we'll concatenate all of the datasets together.
+
+Note that this is just one way to handle this problem. 
+Another solution might be to use *all* of the columns for all years and impute the missing data for the missing columns, or to select a learning algorithm that can handle the missing data.
+However, doing so introduces more uncertainty into the model we'll use down the line, and so this particular method was chosen because...
+
+Anyway, let's start by reading in the 2021 data since we'll only be using columns found for that year.
+After reading in the data, we'll call `clean_names` and filter out any samples without a `collected_date`.
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(janitor)
+dnr.2021 <- read_xlsx("../../data/IowaDNR_2021_Data_Merged.xlsx") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date))
+```
+
+```{r}
+#| eval: false
+
+library(tidyverse)
+library(janitor)
+dnr.2021 <- read_xlsx("data/IowaDNR_2021_Data_Merged.xlsx") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date))
+```
+
+
+```{r}
+dnr.2021 %>% 
+  colnames()
+```
+
+Most of these columns look fine, but let's change the *mcy* variable names from `ax` to `mcy_a_x` to be more descriptive (with the added benefit of matching how `clean_names` parses these columns in the other datasets).
+There are a couple ways we can do this, but I'll be using the rename function here:
+
+```{r}
+dnr.2021 <- dnr.2021 %>% 
+  rename(
+    mcy_a_m = am,
+    mcy_a_p = ap,
+    mcy_a_a = aa
+  )
+
+dnr.2021 %>% 
+  colnames()
+```
+
+Great!
+Let's go back now to the 2018 dataset:
+
+```{r}
+#| eval: false
+dnr.2018 <- read_xlsx("data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date))
+
+dnr.2018 %>% 
+  colnames()
+```
+
+```{r}
+#| echo: false
+dnr.2018 <- read_xlsx("../../data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date))
+
+dnr.2018 %>% 
+  colnames()
+```
+
+The ideal situation is that all the column names match exactly and we can just use `any_of` to get those columns from this data frame. 
+However, when we try that, we see that we still have some work to do:
+
+```{r}
+dnr.2018 %>% 
+  select(any_of(colnames(dnr.2021)))
+```
+
+We're missing a lot of columns here.
+Let's do another `rename` step here before our select step:
+
+```{r}
+dnr.2018 <- dnr.2018 %>% 
+  rename(
+    microcystin = microcystin_raw_value_ug_l,
+    tkp = tkp_mg_p_l,
+    tkn = tkn_mg_n_l,
+    x16s = x16s_r_rna_gene_copies_m_l,
+    mcy_a_m = microcystismcy_a_gene_copies_m_l,
+    mcy_a_p = planktothrixmcy_a_gene_copies_m_l,
+    mcy_a_a = aanabaenamcy_a_gene_copies_m_l
+  ) %>% 
+  select(any_of(colnames(dnr.2021)))
+
+dnr.2018 %>% 
+  head()
+```
+
+Much better. 
+Note that there are some missing columns here because there are columns in the 2021 dataset that don't exist in the 2018 dataset.
+
+We'll repeat this process for the 2019 dataset. 
+Some notes:
+
+* `clean_names` already nicely formatted the *mcy*X columns
+* By default, `read_xlsx` reads in the first sheet of the `xlsx` file. This means that the 2019 data will only show the data on the first sheet. We want the data from the sheet labeled "combined", so use the `sheet` argument of `read_xlsx` to do this.
+
+```{r}
+#| eval: false
+dnr.2019 <- read_xlsx("data/IowaDNR_2019_Data_Merged.xlsx",
+                      sheet = "combined") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date))
+
+dnr.2019 %>% 
+  colnames()
+```
+
+```{r}
+#| echo: false
+dnr.2019 <- read_xlsx("../../data/IowaDNR_2019_Data_Merged.xlsx",
+                      sheet = "combined") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date))
+
+dnr.2019 %>% 
+  colnames()
+```
+
+```{r}
+read_xlsx("data/IowaDNR_2019_Data_Merged.xlsx",
+          sheet = "combined") %>% 
+  clean_names() %>% 
+  filter(!is.na(collected_date)) %>% 
+  rename(
+    tkn = tkn_mg_n_l,
+    tkp = tkp_mg_p_l
+  ) %>% 
+  select(any_of(colnames(dnr.2021)))
+```
+
+
+# Intro to Tidymodels
+
+Up until now, we've just been doing EDA stuff.
+Now that we've done some of that, we can get started with modeling.
+For this series, we're going to use `tidymodels` to keep our prediction workflows organized and reproducible.
+
+As with most things in programming, there are several different ways to achieve what we're going to do.
+This is just one way to do all of that.
+
+The [`tidymodels`](https://www.tidymodels.org/) framework is "a collection of packages for modeling and machine learning using tidyverse principles." The `tidymodels` website has [several tutorials](https://www.tidymodels.org/start/) to introduce you to the fundamentals of working with `tidymodels`.
+In this tutorial, create a random forest model.
+
+For today's tutorial, you'll need to install the `xgboost` package.
+
+# A first, linear model
+
+Let's begin by reading in our data with some of our preprocessing.
+
+```{r}
+#| eval: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+
+dnr.2018 <- read_xlsx("data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  janitor::clean_names() %>% 
+  filter(!is.na(collected_date)) %>% 
+  mutate(hazard_class = if_else(
+    microcystin_raw_value_ug_l > 8,
+    "hazardous",
+    "safe"
+    ))
+dnr.2018 %>% 
+  head()
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+
+dnr.2018 <- read_xlsx("../../data/IowaDNR_2018_Data_Merged.xlsx") %>% 
+  janitor::clean_names() %>% 
+  filter(!is.na(collected_date)) %>%   
+  mutate(hazard_class = if_else(
+    microcystin_raw_value_ug_l > 8,
+    "hazardous",
+    "safe"
+  )) 
+dnr.2018 %>% 
+  head()
+```
+
+## 
+
+```{r}
+#| warning: false
+library(tidymodels)
+```
+
+```{r}
+lm(log1p(microcystin_raw_value_ug_l) ~ p_h, dnr.2018) %>% 
+  summary()
+```
+
+```{r}
+lm_rec <- recipe(microcystin_raw_value_ug_l ~ p_h, dnr.2018)
+```
+
+```{r}
+lm_mod <- linear_reg()
+```
+
+```{r}
+lm_workflow <- workflow() %>% 
+  add_model(lm_mod) %>% 
+  add_recipe(lm_rec)
+```
+
+```{r}
+  
+```
+
+
+# Homework
+
+* So far, we've been doing all of our work within one `qmd`.  However, the code to read in the data and combine it is getting quite big. Let's simplify this document by moving our data prep (reading in the data sets, cleaning the data, combining the data) into a R script file called `load_DNR_data.R`. After creating `load_DNR_data.R`, `source` the script at the top of your `qmd`.
+*

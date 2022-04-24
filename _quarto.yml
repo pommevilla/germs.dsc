@@ -30,6 +30,7 @@ website:
       - section: "Meetings"
         contents:
           - docs/meetings/getting_started.qmd
+          - docs/meetings/first_model.qmd
       - about.qmd
 
 format:

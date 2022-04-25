@@ -18,7 +18,7 @@
     "href": "docs/meetings/first_model.html",
     "title": "Beginning Predictions",
     "section": "",
-    "text": "We’re now going to make our first model."
+    "text": "In this meeting, we’ll train our first model and see how to gather metrics and predictions. First, let’s go over the homework from last time."
   },
   {
     "objectID": "docs/meetings/first_model.html#combining-the-datasets",

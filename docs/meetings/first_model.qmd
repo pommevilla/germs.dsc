@@ -6,9 +6,8 @@ editor_options:
     wrap: sentence
 ---
 
-We're now going to make our first model.
-
-# Introduction
+In this meeting, we'll train our first model and see how to gather metrics and predictions.
+First, let's go over the homework from last time.
 
 # Homework from last time
 
